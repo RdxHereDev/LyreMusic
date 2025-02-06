@@ -1,0 +1,672 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Home - Tempo</title><!-- IMPORTANT: Place these lines as high as you can in <head>, ideally just after <title> tag -->
+  <link rel="preload" href="https://securepubads.g.doubleclick.net/tag/js/gpt.js" as="script"><!-- Place the below code anywhere you like in the <head> (higher is better) -->
+  <script>window.AdSlots = window.AdSlots || {cmd: [], divCheck: true, renderOnFirstLoad: true};</script>
+  <script async src="https://kumo.network-n.com/dist/app.js" site="pcgamesn"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="/css/site/app.css?id=6a2066a93544bc0fc9d6">
+  <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Tempo">
+  <meta property="og:description" content="Get the best musical experience available on Discord with Tempo! Trusted by 1 million guilds, Tempo is infinitely configurable, feature rich with Support for Spotify, iTunes, Deezer, Twitch &amp; 24-7 Audio.">
+  <meta property="og:image" content="https://tempobot.net/images/logo.png">
+  <meta property="og:url" content="https://tempobot.net">
+  <meta name="theme-color" content="#c947c1">
+  <meta name="twitter:title" content="Tempo">
+  <meta name="twitter:description" content="Get the best musical experience available on Discord with Tempo! Trusted by 1 million guilds, Tempo is infinitely configurable, feature rich with Support for Spotify, iTunes, Deezer, Twitch &amp; 24-7 Audio.">
+  <meta name="twitter:image" content="https://tempobot.net/images/logo.png">
+  <meta name="twitter:card" content="app">
+  <meta name="description" content="Get the best musical experience available on Discord with Tempo! Trusted by 1 million guilds, Tempo is infinitely configurable, feature rich with Support for Spotify, iTunes, Deezer, Twitch &amp; 24-7 Audio.">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTG3SC8XQT"></script>
+  <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-CTG3SC8XQT');
+        </script>
+  <style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+ </head>
+ <body>
+  <div class="tempo-site">
+   <div class="ad-container">
+    <div class="container">
+     <div class="box ad">
+      <div class="columns is-vcentered is-mobile">
+       <div class="column is-9">
+        <div class="ad-text">
+         Unlock 6 additional bots with Tempo Premium
+        </div>
+       </div>
+       <div class="column is-3">
+        <div class="columns is-vcentered is-gapless" style="float: right;">
+         <div class="column is-narrow">
+          <a href="/premium" class="button is-primary ad-button">Upgrade</a>
+         </div>
+         <div class="column is-narrow">
+          <button class="button is-primary ad-button dismiss" onclick="hideAd()">Dismiss</button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container">
+    <div class="box navigation">
+     <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+       <a class="navbar-item" href="https://tempobot.net"> <img src="https://tempobot.net/images/bots/tempo.webp" class="tempo-logo"> </a> <a role="button" class="navbar-burger" onclick="toggleMobileNav()" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span aria-hidden="true"></span> </a>
+      </div>
+      <div id="navbar" class="navbar-menu">
+       <div class="navbar-start">
+        <a class="navbar-item" href="/"> Home </a> <a class="navbar-item" href="/commands"> Commands </a> <a class="navbar-item" href="/faq"> FAQs </a> <a class="navbar-item" href="/premium"> Premium </a> <a class="navbar-item" href="/support"> Support </a>
+       </div>
+       <div class="navbar-end">
+        <a class="navbar-item" href="/auth/login">Login</a>
+       </div>
+      </div>
+     </nav>
+    </div>
+    <div class="tempo-home">
+     <section class="hero is-fullheight-with-navbar">
+      <div class="columns is-centered">
+       <div class="column is-3">
+        <div id="nn_player"></div>
+       </div>
+      </div>
+      <div class="hero-body">
+       <div class="container has-text-centered" data-aos="fade" data-aos-easing="ease-in-out-cubic" data-aos-duration="400">
+        <img src="https://tempobot.net/images/tempo_logo_large.png" alt="TempoBot Logo" class="logo" style="margin-top: -100px; margin-bottom: -100px;">
+        <br>
+        <h1 class="page-title" style="font-size: 80px; margin-bottom: 15px;">TE<span class="flicker-slow">M</span>PO B<span class="flicker-fast">O</span>T</h1>
+        <br>
+        <br>
+        <div class="columns is-centered is-mobile">
+         <div class="column is-full">
+          <a href="/invite" class="button is-primary discord"> <i class="fab fa-discord"></i>&nbsp; <span> &nbsp;Add to Discord </span> </a>
+          <br>
+          <br><a href="/support" class="theme is-support-link"> Join Our Support Server </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="hero is-small">
+      <div class="hero-body">
+       <div class="box home-section">
+        <center>
+         <div class="section-title">
+          Features
+         </div>
+        </center>
+        <div class="columns is-vcentered is-centered">
+         <div class="column is-4">
+          <div class="box feature">
+           <center>
+            <img src="https://tempobot.net/images/stereo.png" width="156" height="156" alt="Stereo" class="feature-img">
+            <div class="feature-title">
+             High Quality Audio
+            </div>
+            <div class="feature-description">
+             Stream audio at source quality direct your server, enjoy chilling out or getting your groove on with the best in the business for quality.
+            </div>
+           </center>
+          </div>
+         </div>
+         <div class="column is-4">
+          <div class="box feature">
+           <center>
+            <img src="https://tempobot.net/images/settings.png" width="156" height="156" alt="Settings" class="feature-img">
+            <div class="feature-title">
+             Complete Control
+            </div>
+            <div class="feature-description">
+             With our unique interface you can customize Tempo to your hearts content, all in our goal to give you the best possible experience you can have while listening to the music you love.
+            </div>
+           </center>
+          </div>
+         </div>
+         <div class="column is-4">
+          <div class="box feature">
+           <center>
+            <img src="https://tempobot.net/images/server.png" width="156" height="156" alt="Server" class="feature-img">
+            <div class="feature-title">
+             Top Notch Hardware 
+             <div class="promo-timer"></div>
+            </div>
+            <div class="feature-description">
+             We run our services on the best hardware money can buy, experience 99.9% uptime so come day or night you can enjoy the music you want, whenever you want.
+            </div>
+           </center>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="hero is-small">
+      <div class="hero-body">
+       <div class="box home-section">
+        <center>
+         <div class="section-title">
+          Tempo Premium
+         </div>
+         <div class="section-subtitle">
+          Get The <b>ULTIMATE</b> Musical Experience With Tempo's Premium Package
+          <br>
+           Unlock access to exclusive functionality and take your server to the next level
+         </div>
+        </center>
+        <div class="box premium-title-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="premium-title">
+            Feature
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="premium-title">
+            Free
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="premium-title premium">
+            Premium
+           </div>
+          </div>
+         </div>
+        </div><!-- <i class="fas fa-times-circle"></i> --> <!-- <i class="fas fa-check-circle"></i> -->
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Audio Controls
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Queue Limits
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <b>500</b>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <b>10,000</b>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Music Announcements
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Automatic Searching
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            DJ Roles
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            DJ Only Mode
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Slash Command Presets
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <b>1</b>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <b>100</b>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Basic Support
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Custom Collaborative Playlists
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            24/7 Audio
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            14 Audio Effects
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Volume Control (0-1000)
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Default Volume
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Duplicate Song Prevention
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Automatic Member Cleanup
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Customer Per-User Song Limits
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Autoplay
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            6 Additional Bots
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Premium Role
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Premium Support
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="box premium-feature-row">
+         <div class="columns is-vcentered is-mobile">
+          <div class="column is-4">
+           <div class="feature-title">
+            Beta Access
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title">
+            <i class="fas fa-times-circle"></i>
+           </div>
+          </div>
+          <div class="column is-4">
+           <div class="feature-title premium">
+            <i class="fas fa-check-circle"></i>
+           </div>
+          </div>
+         </div>
+        </div>
+        <center>
+         <a href="/premium" class="button is-primary find-out-more">Find out More</a>
+        </center>
+       </div>
+      </div>
+     </section>
+    </div>
+    <section class="hero is-small is-black" style="background: transparent">
+     <div class="hero-body">
+      <center>
+       <strong>©2021-2023 tempobot.net | <a href="/legal/terms">Terms and Conditions</a> | <a href="/legal/privacy-policy">Privacy Policy</a></strong>
+       <br><a class="nn-cmp-show" href="#">Manage Cookie Settings</a>
+      </center>
+     </div>
+    </section>
+   </div>
+  </div><!-- JavaScript -->
+  <script src="/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+  <script data-turbo-eval="false" data-turbolinks-eval="false">window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'RcEjCxpwxwrRk4Pkgb4YH8CjcOYFAqAIN9ZJorJ1';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://tempobot.net/js/slider.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script>
+        feather.replace();
+        $('input[type="range"]').rangeslider({
+            polyfill : false,
+            onInit : function() {
+                this.output = $( '<div class="range-output" />' ).insertAfter( this.$range ).html( this.$element.val() );
+            },
+            onSlide : function( position, value ) {
+                this.output.html( value );
+            }
+        });
+
+        function hideAd(){
+            $.ajax({
+                type: 'GET',
+                url: '/dismiss_ad',
+
+                success: function(){
+                    $(".ad-container").addClass('hide');
+                    $(".ad-container").removeClass('show');
+                }
+            });
+        }
+
+        function toggleAccordian(id){
+            let faq = $("#" + id);
+
+            if(!faq.hasClass('is-active')){ // opening new faq
+                $(".faq-item.is-active").each(function(){
+                    let i = $(this).attr('id');
+                    let c = $("#" + i + "-content");
+                    let a = $("#" + i + "-arrow");
+
+                    a.removeClass('rotate');
+                    c.slideUp(250);
+                    $(this).removeClass('is-active');
+                    return;
+                });
+            }
+
+            let content = $("#" + id + "-content");
+            let arrow = $("#" + id + "-arrow");
+            arrow.toggleClass('rotate');
+            content.slideToggle(250);
+            faq.toggleClass('is-active');
+        }
+    </script>
+  <script>
+            setTimeout(function(){
+                $(".tempo-loader").addClass('hide');
+            }, Math.random() * (5000 - 1000) + 1000);
+        </script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://js.chargebee.com/v2/chargebee.js" data-cb-site="tempobot"></script>
+  <script src="/js/apple_pay.js?id=71121f59b4113652d64d"></script>
+  <script>
+        function toggleMobileNav(){
+            $("#navbar").toggleClass('is-active');
+        }
+    </script>
+ </body>
+</html>
